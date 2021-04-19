@@ -4,6 +4,8 @@ local PointsLinkSetter = {}
 --//TODO Add exceiption if Cooldown is less than 1
 --//TODO add exception if points are nil
 function PointsLinkSetter.LinkPoints(pA, pB, entryOffset, exitOffset, coolDown)
+    local UnlinkPortalsEvent = script.Parent.UnlinkPortals
+
     local debounce = false
     coolDown = coolDown or 1
     entryOffset = entryOffset or CFrame.new(0,0,0)
@@ -32,7 +34,12 @@ function PointsLinkSetter.LinkPoints(pA, pB, entryOffset, exitOffset, coolDown)
         end
     end)
 
-    return entryConnection, exitConnection
+    UnlinkPortalsEvent.Event:Connect(function()
+        entryConnection:Disconnect()
+        exitConnection:Disconnect()
+        print("disconnected")
+    end)
+    
 end
 
 

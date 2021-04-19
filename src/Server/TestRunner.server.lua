@@ -8,3 +8,5 @@ local pB = workspace.PB
 local new = PortalService.new(pA, pB)
 new:LinkPointsOnTouch()
 
+wait(10)
+new:UnlinkPoints()
