@@ -14,12 +14,12 @@ function PortalService.new(pointA, pointB, type)
 	self.Name = pointA.Name.."_"..pointB.Name.."_Portal"
 	self.EntryPoint = pointA
 	self.ExitPoint = pointB
-	
 	return self
 end
 
 function PortalService:LinkPointsOnTouch()
 	PointsLinkSetter.LinkPoints(self.EntryPoint, self.ExitPoint )
+	Portals[self.Name] = self 
 end
 
 
