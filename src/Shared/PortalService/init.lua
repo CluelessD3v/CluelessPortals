@@ -19,13 +19,16 @@ end
 
 function PortalService:LinkPointsOnTouch()
 	PointsLinkSetter.LinkPoints(self.EntryPoint, self.ExitPoint )
-	Portals[self.Name] = self 
+	Portals[self.Name] = self
+	print(Portals)
 end
 
 
 function PortalService:SetPointsOffset(entryOffset, exitOffset)
 	PointsLinkSetter.LinkPoints(self.EntryPoint, self.ExitPoint, entryOffset, exitOffset )
 end
+
+
 
 
 

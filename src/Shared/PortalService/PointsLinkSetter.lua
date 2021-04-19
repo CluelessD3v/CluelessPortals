@@ -9,7 +9,7 @@ function PointsLinkSetter.LinkPoints(pA, pB, entryOffset, exitOffset, coolDown)
     entryOffset = entryOffset or CFrame.new(0,0,0)
     exitOffset = exitOffset or CFrame.new(0,0,0)
 
-    pA.Touched:Connect(function(touchedPart)
+    local entryConnection = pA.Touched:Connect(function(touchedPart)
         local humanoid = touchedPart.Parent:FindFirstChildWhichIsA("Humanoid")
         if humanoid and debounce == false then
             debounce = true
@@ -21,7 +21,7 @@ function PointsLinkSetter.LinkPoints(pA, pB, entryOffset, exitOffset, coolDown)
     end)
 
     
-    pB.Touched:Connect(function(touchedPart)
+    local exitConnection = pB.Touched:Connect(function(touchedPart)
         local humanoid = touchedPart.Parent:FindFirstChildWhichIsA("Humanoid")
         if humanoid and debounce == false then
             debounce = true
@@ -31,6 +31,8 @@ function PointsLinkSetter.LinkPoints(pA, pB, entryOffset, exitOffset, coolDown)
             debounce = false
         end
     end)
+
+    return entryConnection, exitConnection
 end
 
 
