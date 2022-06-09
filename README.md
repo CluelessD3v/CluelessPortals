@@ -14,4 +14,33 @@ Next, open `PortalService.rbxlx` in Roblox Studio and start the Rojo server:
 rojo serve
 ```
 
-For more help, check out [the Rojo documentation](https://rojo.space/docs).
+#Clueless Portals
+
+super-Lightweigh module to set up "portals" between 2 Instances.
+
+Touching point A will result in a TP to point B
+
+### API
+
+```
+PortalService.new(pointA, pointB)
+```
+Constructs a new portal instance
+
+```
+PortalService:LinkPointsOnTouch(): Void
+```
+Stablish Link for portal object
+
+
+```
+LinkPointsOnTouchWithOffset():Void
+```
+Stablish Link for portal with offset
+
+
+
+
+
+
+Author notes: Revisiting this repo after a long time showed how muc this lacks to be a propper module someone can use, this will remain public for historic reasons.

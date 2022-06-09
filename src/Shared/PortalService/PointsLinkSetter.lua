@@ -1,8 +1,4 @@
 local PointsLinkSetter = {}
-
-
---//TODO Add exceiption if Cooldown is less than 1
---//TODO add exception if points are nil
 function PointsLinkSetter.LinkPoints(pA, pB, entryOffset, exitOffset, coolDown)
     local debounce = false
     coolDown = coolDown or 1

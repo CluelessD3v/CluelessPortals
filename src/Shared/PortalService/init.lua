@@ -8,7 +8,7 @@ PortalService.__index = PortalService
 
 local Portals = {}
 
-function PortalService.new(pointA, pointB, type)
+function PortalService.new(pointA, pointB)
 	local self = setmetatable({}, PortalService)
 	
 	self.Name = pointA.Name.."_"..pointB.Name.."_Portal"
@@ -19,14 +19,11 @@ end
 
 function PortalService:LinkPointsOnTouch()
 	PointsLinkSetter.LinkPoints(self.EntryPoint, self.ExitPoint )
-	Portals[self.Name] = self 
 end
 
 
-function PortalService:SetPointsOffset(entryOffset, exitOffset)
+function PortalService:LinkPointsOnTouchWithOffset(entryOffset, exitOffset)
 	PointsLinkSetter.LinkPoints(self.EntryPoint, self.ExitPoint, entryOffset, exitOffset )
 end
-
-
 
 return PortalService
